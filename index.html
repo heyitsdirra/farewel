@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell Letter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Halaman Pertama (Input Token) -->
+    <div id="halaman-pertama" class="container">
+        <img src="fl.jpg" alt="Farewell letter" class="header-img">
+        <h1>Hey, you got a farewell letter from Aurora 🍂</h1>
+        <p>Enter your personal token below:</p>
+        <input type="text" id="tokenInput" placeholder="Input your token...">
+        <button onclick="cekToken()">Open</button>
+    </div>
+
+    <!-- Halaman Kedua (Surat) -->
+    <div id="halaman-kedua" class="container hidden">
+        <p id="isiSurat" class="surat-text"></p>
+        <button onclick="kembali()">Back</button>
+    </div>
+
+    <script>
+        let suratData = {};
+
+        fetch('surat.json')
+            .then(response => response.json())
+            .then(data => { 
+                suratData = data;
+            })
+            .catch(error => console.error("Gagal mengambil data surat:", error));
+
+        function cekToken() {
+            let token = document.getElementById("tokenInput").value.trim().toLowerCase();
+            let halamanPertama = document.getElementById("halaman-pertama");
+            let halamanKedua = document.getElementById("halaman-kedua");
+            let isiSurat = document.getElementById("isiSurat");
+
+            if (suratData[token]) {
+                isiSurat.innerText = suratData[token];
+                halamanPertama.classList.add("hidden");
+                halamanKedua.classList.remove("hidden");
+            } else {
+                alert("Token tidak valid! Coba lagi 🍁");
+            }
+        }
+
+        function kembali() {
+            document.getElementById("halaman-pertama").classList.remove("hidden");
+            document.getElementById("halaman-kedua").classList.add("hidden");
+            document.getElementById("tokenInput").value = "";
+        }
+    </script>
+
+</body>
+</html>
