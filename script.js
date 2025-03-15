@@ -43,7 +43,7 @@ function startTimer() {
 
 // Fortune Cookie
 const fortunes = ["Hari ini penuh keberuntungan! 🌟", "Waktunya istirahat 🍵", "Coba sesuatu yang baru 🚀", "Seseorang merindukanmu 💌"];
-const memes = ["meme/meme1.jpg", "meme/meme2.jpg", "meme/meme3.jpg", "meme/meme4.jpg", "meme/meme5.jpg"];
+const memes = ["meme1.jpg", "meme2.jpg", "meme3.jpg", "meme4.jpg", "meme5.jpg"];
 
 function showFortune() {
     let randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
