@@ -58,19 +58,25 @@ function showFortune() {
 }
 
 // Cek Token
-let suratData = {
-    "ratna": "Kamu luar biasa! 💖",
-    "shofiyya": "Jangan pernah berhenti bersinar ✨",
-    "ellisya": "Aku akan selalu ingat kamu! 🌸",
-    "bening": "Persahabatan kita seperti cerita dongeng, penuh kenangan indah! 🩷"
-};
+let suratData = {}; // Buat nyimpen data dari JSON
 
+// Fungsi buat ambil surat dari JSON
+function loadSuratData() {
+    fetch("surat.json")
+        .then(response => response.json())
+        .then(data => {
+            suratData = data;
+            console.log("Data surat berhasil dimuat:", suratData); // Debugging
+        })
+        .catch(error => console.error("Gagal mengambil data surat:", error));
+}
+
+// Fungsi cek token
 function cekToken() {
     let token = document.getElementById("tokenInput").value.trim();
-    let suratElement = document.getElementById("isiSurat");
-
+    
     if (suratData[token]) {
-        suratElement.innerText = suratData[token];
+        document.getElementById("isiSurat").innerText = suratData[token];
         showPage(5);
     } else {
         alert("Kode tidak valid! Coba lagi 💕");
