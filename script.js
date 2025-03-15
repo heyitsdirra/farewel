@@ -73,12 +73,16 @@ function loadSuratData() {
 
 // Fungsi cek token
 function cekToken() {
-    let token = document.getElementById("tokenInput").value.trim();
-    
+    let token = document.getElementById("tokenInput").value.trim().toLowerCase();
+    console.log("Token yang dimasukkan:", token); // Debug
+
     if (suratData[token]) {
+        console.log("Kode valid!"); // Debug
         document.getElementById("isiSurat").innerText = suratData[token];
         showPage(5);
     } else {
+        console.log("Kode tidak valid!"); // Debug
         alert("Kode tidak valid! Coba lagi 💕");
     }
 }
+
