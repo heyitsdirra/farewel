@@ -67,8 +67,10 @@ let suratData = {
 
 function cekToken() {
     let token = document.getElementById("tokenInput").value.trim();
+    let suratElement = document.getElementById("isiSurat");
+
     if (suratData[token]) {
-        document.getElementById("isiSurat").innerText = suratData[token];
+        suratElement.innerText = suratData[token];
         showPage(5);
     } else {
         alert("Kode tidak valid! Coba lagi 💕");
