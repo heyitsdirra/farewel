@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+font-family: 'Lexend', sans-serif;
+    text-align: center;
+    background-color: #EBDCC5;
+    color: #7E3717;
+    margin: 0;
+    padding: 0;
+}
+
+.first-title {
+font-family: 'Pinyon Script', cursive;
+font-size: 60px;
+color: #7E3717;
+}
+
+.first-subtitle {
+font-family: 'Lexend', sans-serif;
+font-size: 20px;
+color: #3F1816;
+}
+
+.b-title {
+font-family: 'Lexend', sans-serif;
+font-weight: bold;
+font-size: 30px;
+color: #7E3717;
+}
+
+/* Halaman */
+.page {
+    display: none;
+    padding: 30px;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Animasi Fade */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Tombol */
+button {
+    background-color: #5D6737;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    border-radius: 30px; /* Bikin bulat */
+    font-family: 'Lexend', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #5D6737;
+    transform: scale(1.05);
+}
+
+/* Gambar tengah */
+.center-img {
+    max-width: 400px;
+    height: auto;
+    margin: 20px auto;
+display: block;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-img {
+max-width: 400px; /* Biar nggak kegedean */
+    height: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cookie-img:hover {
+    transform: scale(1.1); /* Efek hover biar ada animasi */
+}
+
+/* Teks Timer */
+.big-text {
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Lexend', sans-serif;
+    color: #222918;
